@@ -1,12 +1,12 @@
 {% load static %}
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <title>Keep Up</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="{% static 'news/css/style.css' %}" />
-<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="{% static 'news/css/ie.css' %}" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="{% static 'css/ie.css' %}" /><![endif]-->
 </head>
 <body>
 <!-- BEGIN wrapper -->
@@ -25,7 +25,7 @@
           <li><a href="#">Videos</a></li>
         </ul>
         <h1><a href="#">TheLatest</a></h1>
-        <div class="ad"> <a href="#"><img src="img/ad468x60.gif" alt="" /></a> </div>
+        <div class="ad"> <a href="#"><img src="{% static 'img/ad468x60.gif' %}" alt="" /></a> </div>
         <ol>
           <li class="f"><a href="#">Home</a></li>
           <li><a href="about.html">About Us</a></li>
@@ -49,7 +49,7 @@
         <div class="post">
           <h2><a href="#">Travel</a></h2>
           <p class="date"><a href="#">Dingexx</a> on Feb 12, 2009 | <a href="#">12 Comments</a></p>
-          <div class="thumb"><a href="#"><img src="img/_thumb1.jpg" alt="" /></a></div>
+          <div class="thumb"><a href="#"><img src="{% static 'img/_thumb1.jpg' %}" alt="" /></a></div>
           <p>Risus est orci tristique Duis aliquam nunc ut at facilisis pede. At in rhoncus tellus augue morbi tellus tincidunt dui nunc facilisis. Quis pellentesque eget vel Nunc semper vel semper condimentum semper eleifend ...</p>
           <a class="readmore" href="#">Read More</a> </div>
         <!-- end post -->
@@ -57,7 +57,7 @@
         <div class="post">
           <h2><a href="#">Search Engine Optimization</a></h2>
           <p class="date"><a href="#">Meyang</a> on Feb 10, 2009 | <a href="#">100 Comments</a></p>
-          <div class="thumb"><a href="#"><img src="img/_thumb2.jpg" alt="" /></a></div>
+          <div class="thumb"><a href="#"><img src="{% static 'img/_thumb2.jpg' %}" alt="" /></a></div>
           <p>Vel illum qui dolorem eum fugiat quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi</p>
           <a class="readmore" href="#">Read More</a> </div>
         <!-- end post -->
@@ -65,7 +65,7 @@
         <div class="post">
           <h2><a href="#">Videos</a></h2>
           <p class="date"><a href="#">Bang</a> on Feb 12, 2009 | <a href="#">8 Comments</a></p>
-          <div class="thumb"><a href="#"><img src="img/_thumb3.jpg" alt="" /></a></div>
+          <div class="thumb"><a href="#"><img src="{% static 'img/_thumb3.jpg' %}" alt="" /></a></div>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et ligula. Aliquam risus magna, vehicula nec, ultrices venenatis, fermentum id, sem. Aliquam sem pede, volutpat vitae, consequat vel, eleifend sed, turpis.</p>
           <a class="readmore" href="#">Read More</a> </div>
         <!-- end post -->
@@ -73,7 +73,7 @@
         <div class="post">
           <h2><a href="#">Marketing</a></h2>
           <p class="date"><a href="#">Goma</a> on Feb 10, 2009 | <a href="#">20 Comments</a></p>
-          <div class="thumb"><a href="#"><img src="img/_thumb4.jpg" alt="" /></a></div>
+          <div class="thumb"><a href="#"><img src="{% static 'img/_thumb4.jpg' %}" alt="" /></a></div>
           <p>Risus est orci tristique Duis aliquam nunc ut at facilisis pede. At in rhoncus tellus augue morbi tellus tincidunt dui nunc facilisis. Quis pellentesque eget vel Nunc semper vel semper condimentum semper eleifend ...</p>
           <a class="readmore" href="#">Read More</a> </div>
         <!-- end post -->
@@ -81,7 +81,7 @@
         <div class="post">
           <h2><a href="#">Travel</a></h2>
           <p class="date"><a href="#">Dingexx</a> on Feb 12, 2009 | <a href="#">12 Comments</a></p>
-          <div class="thumb"><a href="#"><img src="img/_thumb5.jpg" alt="" /></a></div>
+          <div class="thumb"><a href="#"><img src="{% static 'img/_thumb5.jpg' %}" alt="" /></a></div>
           <p>Risus est orci tristique Duis aliquam nunc ut at facilisis pede. At in rhoncus tellus augue morbi tellus tincidunt dui nunc facilisis. Quis pellentesque eget vel Nunc semper vel semper condimentum semper eleifend ...</p>
           <a class="readmore" href="#">Read More</a> </div>
         <!-- end post -->
@@ -89,7 +89,7 @@
         <div class="post">
           <h2><a href="#">Search Engine Optimization</a></h2>
           <p class="date"><a href="#">Meyang</a> on Feb 10, 2009 | <a href="#">100 Comments</a></p>
-          <div class="thumb"><a href="#"><img src="img/_thumb6.jpg" alt="" /></a></div>
+          <div class="thumb"><a href="#"><img src="{% static 'img/_thumb6.jpg' %}" alt="" /></a></div>
           <p>Vel illum qui dolorem eum fugiat quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi</p>
           <a class="readmore" href="#">Read More</a> </div>
         <!-- end post -->
@@ -97,7 +97,7 @@
         <div class="post">
           <h2><a href="#">Videos</a></h2>
           <p class="date"><a href="#">Bang</a> on Feb 12, 2009 | <a href="#">8 Comments</a></p>
-          <div class="thumb"><a href="#"><img src="img/_thumb7.jpg" alt="" /></a></div>
+          <div class="thumb"><a href="#"><img src="{% static 'img/_thumb7.jpg' %}" alt="" /></a></div>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et ligula. Aliquam risus magna, vehicula nec, ultrices venenatis, fermentum id, sem. Aliquam sem pede, volutpat vitae, consequat vel, eleifend sed, turpis.</p>
           <a class="readmore" href="#">Read More</a> </div>
         <!-- end post -->
@@ -105,7 +105,7 @@
         <div class="post">
           <h2><a href="#">Marketing</a></h2>
           <p class="date"><a href="#">Goma</a> on Feb 10, 2009 | <a href="#">20 Comments</a></p>
-          <div class="thumb"><a href="#"><img src="img/_thumb8.jpg" alt="" /></a></div>
+          <div class="thumb"><a href="#"><img src="{% static 'img/_thumb8.jpg' %}" alt="" /></a></div>
           <p>Risus est orci tristique Duis aliquam nunc ut at facilisis pede. At in rhoncus tellus augue morbi tellus tincidunt dui nunc facilisis. Quis pellentesque eget vel Nunc semper vel semper condimentum semper eleifend ...</p>
           <a class="readmore" href="#">Read More</a> </div>
         <!-- end post -->
@@ -204,11 +204,11 @@
       <!-- end tags -->
       <!-- begin flickr photos -->
       <h2>Flickr Photos</h2>
-      <div class="flickr"> <a href="#"><img src="img/_flickr1.jpg" alt="" /></a> <a href="#"><img src="img/_flickr2.jpg" alt="" /></a> <a href="#"><img src="img/_flickr3.jpg" alt="" /></a> <a href="#"><img src="img/_flickr4.jpg" alt="" /></a> </div>
+      <div class="flickr"> <a href="#"><img src="{% static 'img/_flickr1.jpg' %}" alt="" /></a> <a href="#"><img src="{% static 'img/_flickr2.jpg' %}" alt="" /></a> <a href="#"><img src="{% static 'img/_flickr3.jpg' %}" alt="" /></a> <a href="#"><img src="{% static 'img/_flickr4.jpg' %}" alt="" /></a> </div>
       <!-- end flickr photos -->
       <!-- begin featured video -->
       <h2>Featured Video</h2>
-      <div class="video"> <img src="img/_video.jpg" alt="" /> </div>
+      <div class="video"> <img src="{% static 'img/_video.jpg' %}" alt="" /> </div>
       <!-- end featured video -->
     </div>
     <!-- END sidebar -->
