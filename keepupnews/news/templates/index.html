@@ -15,8 +15,8 @@
   <div id="header">
     <div class="buffer">
       <ol>
-          <li class="f"><a href="#">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
+          <li class="f"><a href="#">Inicio</a></li>
+          <li><a href="create/">Crear Noticia</a></li>
           <li><a href="page.html">Demo Page</a></li>
           <li><a href="contact.html">Contact Page</a></li>
         </ol>
@@ -31,11 +31,12 @@
         <!-- begin post -->
           {% for new in all_news %}
         <div class="post">
-          <h2><a href="#">Travel</a></h2>
-          <p class="date"><a href="#">Dingexx</a> on Feb 12, 2009 | <a href="#">12 Comments</a></p>
-          <div class="thumb"><a href="#"><img src="{% static 'img/_thumb1.jpg' %}" alt="" /></a></div>
-          <p>Risus est orci tristique Duis aliquam nunc ut at facilisis pede. At in rhoncus tellus augue morbi tellus tincidunt dui nunc facilisis. Quis pellentesque eget vel Nunc semper vel semper condimentum semper eleifend ...</p>
-          <a class="readmore" href="#">Read More</a> </div>
+          <h2>{{ new.title }}</h2>
+            <h3>{{ new.topic }}</h3>
+          <p class="date"> {{ new.date }}</p>
+          <div class="thumb"><img src="{{ new.image }}" alt="" /></div>
+          <p>{{ new.description }}</p>
+          <a class="readmore" href="#">Leer más</a> </div>
           {% endfor %}
         <!-- end post -->
     </div>

@@ -28,7 +28,27 @@
     <!-- BEGIN content -->
     <div id="content">
       <div class="buffer">
-
+          <form action="add/" align="center" method="post">
+              <h1>Crea tu noticia</h1> {{ status }}
+              <br><br>
+              {% csrf_token %}
+              Título:<br>
+              <input name="title">
+              <br><br>
+              Imagen:<br>
+              <input type="file" id="img" name="img" accept="image/*">
+              <br><br>
+              Tema:<br>
+              <input name="topic">
+              <br><br>
+              Descripción:<br>
+              <input name="description">
+              <br><br>
+              Contenido:<br>
+              <textarea name="content" rows="10" cols="100" placeholder="Escriba aquí la noticia"></textarea>
+              <br><br>
+              <input type="submit" value="Submit">
+          </form>
       </div>
     </div>
     <!-- END content -->
