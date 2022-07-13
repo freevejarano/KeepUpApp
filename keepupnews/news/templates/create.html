@@ -3,8 +3,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Keep Up</title>
+<title>Keep Up - Crear</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="icon" href="https://cdn.webcat.media/-MA8vyspaN311wQyhR9Y/Logo-Icon.png" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="{% static 'css/ie.css' %}" /><![endif]-->
 </head>
@@ -28,26 +29,28 @@
     <!-- BEGIN content -->
     <div id="content">
       <div class="buffer">
+          <div id="cod" value={{ status }}></div>
           <form action="add/" align="center" method="post">
-              <h1>Crea tu noticia</h1> {{ status }}
+              <h1>{{ msg }}</h1>
+              <h1>Crea tu noticia</h1>
               <br><br>
               {% csrf_token %}
               Título:<br>
-              <input name="title">
+              <input name="title" size="100">
               <br><br>
               Imagen:<br>
-              <input name="img">
+              <input name="img" size="100">
               <br><br>
               Tema:<br>
-              <input name="topic">
+              <input name="topic" size="100">
               <br><br>
               Descripción:<br>
-              <input name="description">
+              <input name="description" size="100">
               <br><br>
               Contenido:<br>
-              <textarea name="content" rows="10" cols="100" placeholder="Escriba aquí la noticia"></textarea>
+              <textarea name="content" rows="10" cols="100" placeholder="Escribe aquí la noticia"></textarea>
               <br><br>
-              <input type="submit" value="Submit">
+              <input type="submit" value="Crear">
           </form>
       </div>
     </div>
@@ -61,5 +64,7 @@
   <!-- END footer -->
 </div>
 <!-- END wrapper -->
+<!--Scripts-->
+<script src="{% static 'js/functions.js' %}"></script>
 </body>
 </html>

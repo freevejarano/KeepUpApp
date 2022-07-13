@@ -5,6 +5,7 @@
 <head>
 <title>Keep Up</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="icon" href="https://cdn.webcat.media/-MA8vyspaN311wQyhR9Y/Logo-Icon.png" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="{% static 'css/ie.css' %}" /><![endif]-->
 </head>
@@ -27,13 +28,13 @@
   <div id="body">
     <!-- BEGIN content -->
     <div id="content">
-      <div class="buffer">
+      <div class="buffer" id="offer" value={{ status }}>
         <!-- begin post -->
           {% for new in all_news %}
         <div class="post">
             <p hidden>{{ new.id }}</p>
             <h2>{{ new.title }}</h2>
-            <h5>&nbsp;&nbsp;{{ new.topic }}</h5>
+            <h4>&nbsp;&nbsp;{{ new.topic }}</h4>
           <p class="date"> {{ new.date }}</p>
           &nbsp;&nbsp;<img src="{{ new.image }}" alt="" width="200" height="200"/>
           <p>{{ new.description }}</p>
@@ -51,5 +52,7 @@
   <!-- END footer -->
 </div>
 <!-- END wrapper -->
+<!--Scripts-->
+<script src="{% static 'js/functions.js' %}"></script>
 </body>
 </html>

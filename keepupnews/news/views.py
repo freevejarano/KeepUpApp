@@ -2,20 +2,25 @@ from django.shortcuts import render
 from .models import News
 from django.utils import timezone
 
+# Show all of news records
 def index(request):
     all_news = News.objects.all()
     return render(request, 'index.html', {'all_news':all_news})
 
+# Show a specific new
 def view(request, id):
     new = News.objects.get(id=id)
     context = {
-        'new':new
+        'new':new,
+        'status': 200
     }
     return render(request, 'view.html', context)
 
+# Return the insert page
 def create(request):
     return render(request, 'create.html')
 
+# Receive the information of a new and create a new object in DB
 def add(request):
     title = request.POST['title']
     image = request.POST['img']
@@ -26,10 +31,11 @@ def add(request):
     new.save()
     context = {
         "status":200,
-        "msg": "¡Noticia creada con éxito!"
+        "msg": "¡LA NOTICIA HA SIDO CREADA CON ÉXITO!"
     }
     return render(request, 'create.html', context)
 
+# Show the information of a new to edit
 def edit(request, id):
     new = News.objects.get(id=id)
     context = {
@@ -37,6 +43,7 @@ def edit(request, id):
     }
     return render(request, 'edit.html', context)
 
+# Receive the information to update the object
 def update(request, id):
     new = News.objects.get(id=id)
     new.title = request.POST['title']
@@ -48,15 +55,17 @@ def update(request, id):
     new.save()
     context = {
         'status': 200,
-        'msg':'La noticia ha sido editada',
+        'msg':'LA NOTICIA HA SIDO EDITADA',
     }
     return render(request, 'edit.html', context)
 
+# Search the new and delete it
 def delete(request, id):
     new = News.objects.get(id=id)
     new.delete()
     context = {
         'status': 200,
-        'msg':'La noticia ha sido borrada',
+        'msg':'LA NOTICIA HA SIDO BORRADA',
+        'new': {'image': 'https://www.colombianosune.com/sites/default/files/asociaciones/NO_disponible-43_7.jpg'}
     }
     return render(request, 'view.html', context)

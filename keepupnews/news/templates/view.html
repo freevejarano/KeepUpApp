@@ -3,8 +3,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Keep Up</title>
+<title>Keep Up - Ver</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="icon" href="https://cdn.webcat.media/-MA8vyspaN311wQyhR9Y/Logo-Icon.png" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="{% static 'css/ie.css' %}" /><![endif]-->
 </head>
@@ -16,7 +17,6 @@
     <div class="buffer">
         <div class="buffer">
             <div style="text-align: center;"><img src="{% static 'img/icon.png' %}" alt=""/></div>
-            <div class="ad">{{ msg }}</div>
         <ol>
           <li class="f"><a href="/">Inicio</a></li>
           <li><a href="create/">Crear Noticia</a></li>
@@ -31,18 +31,20 @@
       <div class="buffer">
         <!-- begin post -->
           <div style="text-align: center;">
+            <h1>{{ msg }}</h1>
             <p hidden>{{ new.id }}</p>
             <h2>{{ new.title }}</h2>
             <h5>{{ new.topic }}</h5>
-          <p class="date"> {{ new.date }}</p>
-          <img src="{{ new.image }}" alt="" width="200" height="200"/>
-          <p>{{ new.description }}</p>
+          <p class="date"> {{ new.date }}</p><br>
+              <p>{{ new.description }}</p>
+              <div id="pic" value={{ status }}>
+          <img src="{{ new.image }}" alt="" width="300" height="300"/>
             <br><br>
-            <p>{{ new.content }}</p>
-          </div>
-          <br>
+            <p>{{ new.content }}</p></div>
+            <br>
           <a href="../edit/{{ new.id }}">Editar</a>
           <a href="../delete/{{ new.id }}">Borrar</a> </div>
+          </div>
         <!-- end post -->
 
     <!-- END content -->
@@ -55,5 +57,7 @@
   <!-- END footer -->
 </div>
 <!-- END wrapper -->
+<!--Scripts-->
+<script src="{% static 'js/functions.js' %}"></script>
 </body>
 </html>

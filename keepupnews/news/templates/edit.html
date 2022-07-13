@@ -3,8 +3,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Keep Up</title>
+<title>Keep Up - Editar</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="icon" href="https://cdn.webcat.media/-MA8vyspaN311wQyhR9Y/Logo-Icon.png" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="{% static 'css/ie.css' %}" /><![endif]-->
 </head>
@@ -16,7 +17,6 @@
     <div class="buffer">
         <div class="buffer">
             <div style="text-align: center;"><img src="{% static 'img/icon.png' %}" alt=""/></div>
-            <div class="ad">{{ msg }}</div>
         <ol>
           <li class="f"><a href="/">Inicio</a></li>
           <li><a href="create/">Crear Noticia</a></li>
@@ -30,26 +30,28 @@
     <div id="content">
       <div class="buffer">
           <form action="update/{{ new.id }}" align="center" method="post">
-              <h1>Crea tu noticia</h1>
+              <h1>{{ msg }}</h1>
+              <h1>Edita tu noticia</h1>
               <br><br>
               {% csrf_token %}
-              Título:<br>
-              <input name="title" value={{ new.title }}>
+              Título: <h3 id="prov">{{ new.title }}</h3><br>
+              <input name="title" size="100">
               <br><br>
               Imagen:<br>
-              <input name="img" value={{ new.image }}><br><br>
-              &nbsp;&nbsp;<img src="{{ new.image }}" alt="" width="200" height="200"/>
+              <input name="img" size="100" value={{ new.image }} ><br><br>
+              &nbsp;&nbsp;<img id="i" alt="" width="200" height="200" src={{ new.image }} />
               <br><br>
               Tema:<br>
-              <input name="topic" value={{ new.topic }}>
+              <input name="topic" size="100" value={{ new.topic }} >
               <br><br>
               Descripción:<br>
-              <input name="description" value={{ new.description }}>
+              <h4 id="prov2" hidden>{{ new.description }}</h4><br>
+              <input name="description" size="100" value={{ new.description }} >
               <br><br>
               Contenido:<br>
               <textarea name="content" rows="10" cols="100">{{ new.content }}</textarea>
               <br><br>
-              <input type="submit" value="Submit">
+              <input type="submit" value="Editar">
           </form>
       </div>
     </div>
@@ -63,5 +65,7 @@
   <!-- END footer -->
 </div>
 <!-- END wrapper -->
+<!--Scripts-->
+<script src="{% static 'js/functions.js' %}"></script>
 </body>
 </html>

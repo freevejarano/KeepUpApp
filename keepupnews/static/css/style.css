@@ -50,15 +50,10 @@ img {
 
 /** BEGIN header **/
 #header {
-	background: url(../img/headtile.gif) repeat-x 0 0;
 	margin-bottom: 10px;
 }
-	#header .buffer { 
-		background: url(../img/headleft.gif) no-repeat 0 0;
-	}
 	#header .buffer .buffer { 
 		height: 169px; 
-		background: url(../img/headright.gif) no-repeat top right;
 		padding-top: 5px;
 	} 
 	#header ul {
@@ -86,7 +81,6 @@ img {
 		#header h1 a {
 			display: block;
 			width: 408px; height: 74px;
-			background: url(../img/icon.png) no-repeat 0 0;
 			text-indent: -9999px;
 			outline: none;
 		}
@@ -103,7 +97,6 @@ img {
 			font-size: 0.9em;
 			text-transform: uppercase;
 			padding-left: 1px;
-			background: url(../img/divider.gif) no-repeat 0 0;
 		}
 			#header ol li.f {
 				padding-left: 0;
@@ -140,7 +133,6 @@ img {
 #body {
 	border: 1px solid #DBDBDB;
 	margin: 10px 0;
-	background: url(../img/wrapper.gif) repeat-y 745px 0;
 	background-color: #FFFFFF;
 }
 /** END body **/
@@ -217,7 +209,6 @@ img {
 					border-bottom: 1px dotted #ABABAB;
 					line-height: 1.4em;
 					padding: 6px 0 6px 12px;
-					background: url(../img/bullet.gif) no-repeat 0 11px;
 				}
 				#bottom .box ul li a {
 					color: #727272;
@@ -295,7 +286,6 @@ img {
 		font-size: 0.9em;
 		text-transform: uppercase;
 		padding: 10px 12px;
-		background: url(../img/horizontal.gif) no-repeat 8px 22px;
 	}
 	#sidebar ul {
 		list-style-type: none;
