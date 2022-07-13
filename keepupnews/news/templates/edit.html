@@ -15,8 +15,8 @@
   <div id="header">
     <div class="buffer">
       <ol>
-          <li class="f"><a href="#">Inicio</a></li>
-          <li><a href="create/">Crear Noticia</a></li>
+          <li class="f"><a href="#">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="page.html">Demo Page</a></li>
           <li><a href="contact.html">Contact Page</a></li>
         </ol>
@@ -28,18 +28,29 @@
     <!-- BEGIN content -->
     <div id="content">
       <div class="buffer">
-        <!-- begin post -->
-          {% for new in all_news %}
-        <div class="post">
-            <p hidden>{{ new.id }}</p>
-            <h2>{{ new.title }}</h2>
-            <h5>&nbsp;&nbsp;{{ new.topic }}</h5>
-          <p class="date"> {{ new.date }}</p>
-          &nbsp;&nbsp;<img src="{{ new.image }}" alt="" width="200" height="200"/>
-          <p>{{ new.description }}</p>
-          &nbsp;&nbsp;<a href="view/{{ new.id }}">Leer más</a> </div>
-          {% endfor %}
-        <!-- end post -->
+          <form action="update/{{ new.id }}" align="center" method="post">
+              <h1>Crea tu noticia</h1> {{ status }}
+              <br><br>
+              {% csrf_token %}
+              Título:<br>
+              <input name="title" value={{ new.title }}>
+              <br><br>
+              Imagen:<br>
+              <input name="img" value={{ new.image }}><br><br>
+              &nbsp;&nbsp;<img src="{{ new.image }}" alt="" width="200" height="200"/>
+              <br><br>
+              Tema:<br>
+              <input name="topic" value={{ new.topic }}>
+              <br><br>
+              Descripción:<br>
+              <input name="description" value={{ new.description }}>
+              <br><br>
+              Contenido:<br>
+              <textarea name="content" rows="10" cols="100">{{ new.content }}</textarea>
+              <br><br>
+              <input type="submit" value="Submit">
+          </form>
+      </div>
     </div>
     <!-- END content -->
   </div>

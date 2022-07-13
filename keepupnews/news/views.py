@@ -6,6 +6,13 @@ def index(request):
     all_news = News.objects.all()
     return render(request, 'index.html', {'all_news':all_news})
 
+def view(request, id):
+    new = News.objects.get(id=id)
+    context = {
+        'new':new
+    }
+    return render(request, 'view.html', context)
+
 def create(request):
     return render(request, 'create.html')
 
@@ -19,3 +26,32 @@ def add(request):
     new.save()
     return render(request, 'create.html', {"status":200})
 
+def edit(request, id):
+    new = News.objects.get(id=id)
+    context = {
+        'new':new
+    }
+    return render(request, 'edit.html', context)
+
+def update(request, id):
+    new = News.objects.get(id=id)
+    new.title = request.POST['title']
+    new.image = request.POST['img']
+    new.topic = request.POST['topic']
+    new.date = timezone.now()
+    new.description = request.POST['description']
+    new.content = request.POST['content']
+    new.save()
+
+    context = {
+        'msg':'La noticia ha sido editada',
+    }
+    return render(request, 'edit.html', context)
+
+def delete(request, id):
+    new = News.objects.get(id=id)
+    new.delete()
+    context = {
+        'msg':'La noticia ha sido borrada',
+    }
+    return render(request, 'view.html', context)

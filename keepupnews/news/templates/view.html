@@ -29,7 +29,6 @@
     <div id="content">
       <div class="buffer">
         <!-- begin post -->
-          {% for new in all_news %}
         <div class="post">
             <p hidden>{{ new.id }}</p>
             <h2>{{ new.title }}</h2>
@@ -37,9 +36,10 @@
           <p class="date"> {{ new.date }}</p>
           &nbsp;&nbsp;<img src="{{ new.image }}" alt="" width="200" height="200"/>
           <p>{{ new.description }}</p>
-          &nbsp;&nbsp;<a href="view/{{ new.id }}">Leer más</a> </div>
-          {% endfor %}
+          &nbsp;&nbsp;<a href="../edit/{{ new.id }}">Editar</a>
+          &nbsp;&nbsp;<a href="../delete/{{ new.id }}">Borrar</a> </div>
         <!-- end post -->
+
     </div>
     <!-- END content -->
   </div>
