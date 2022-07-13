@@ -12,15 +12,16 @@
 <!-- BEGIN wrapper -->
 <div id="wrapper">
   <!-- BEGIN header -->
-  <div id="header">
+    <div id="header">
     <div class="buffer">
-      <ol>
-          <li class="f"><a href="#">Inicio</a></li>
+        <div class="buffer">
+            <div style="text-align: center;"><img src="{% static 'img/icon.png' %}" alt=""/></div>
+            <div class="ad">{{ msg }}</div>
+        <ol>
+          <li class="f"><a href="/">Inicio</a></li>
           <li><a href="create/">Crear Noticia</a></li>
-          <li><a href="page.html">Demo Page</a></li>
-          <li><a href="contact.html">Contact Page</a></li>
         </ol>
-    </div>
+    </div></div>
   </div>
   <!-- END header -->
   <!-- BEGIN body -->
@@ -29,18 +30,21 @@
     <div id="content">
       <div class="buffer">
         <!-- begin post -->
-        <div class="post">
+          <div style="text-align: center;">
             <p hidden>{{ new.id }}</p>
             <h2>{{ new.title }}</h2>
-            <h5>&nbsp;&nbsp;{{ new.topic }}</h5>
+            <h5>{{ new.topic }}</h5>
           <p class="date"> {{ new.date }}</p>
-          &nbsp;&nbsp;<img src="{{ new.image }}" alt="" width="200" height="200"/>
+          <img src="{{ new.image }}" alt="" width="200" height="200"/>
           <p>{{ new.description }}</p>
-          &nbsp;&nbsp;<a href="../edit/{{ new.id }}">Editar</a>
-          &nbsp;&nbsp;<a href="../delete/{{ new.id }}">Borrar</a> </div>
+            <br><br>
+            <p>{{ new.content }}</p>
+          </div>
+          <br>
+          <a href="../edit/{{ new.id }}">Editar</a>
+          <a href="../delete/{{ new.id }}">Borrar</a> </div>
         <!-- end post -->
 
-    </div>
     <!-- END content -->
   </div>
       <div class="break"></div>

@@ -24,7 +24,11 @@ def add(request):
     content = request.POST['content']
     new = News(title=title, image=image, topic=topic, date=timezone.now(), description=description, content=content)
     new.save()
-    return render(request, 'create.html', {"status":200})
+    context = {
+        "status":200,
+        "msg": "¡Noticia creada con éxito!"
+    }
+    return render(request, 'create.html', context)
 
 def edit(request, id):
     new = News.objects.get(id=id)
@@ -42,8 +46,8 @@ def update(request, id):
     new.description = request.POST['description']
     new.content = request.POST['content']
     new.save()
-
     context = {
+        'status': 200,
         'msg':'La noticia ha sido editada',
     }
     return render(request, 'edit.html', context)
@@ -52,6 +56,7 @@ def delete(request, id):
     new = News.objects.get(id=id)
     new.delete()
     context = {
+        'status': 200,
         'msg':'La noticia ha sido borrada',
     }
     return render(request, 'view.html', context)
